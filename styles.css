@@ -1,0 +1,92 @@
+.game {
+  /* border: 1px dashed black; */
+  width: auto;
+  height: 75vh;
+}
+
+.obstacle {
+  /* border: 1px dashed black; */
+  width: 50px;
+  height: 50px;
+  filter: grayscale(100%);
+  background-image: url("img/meteor.png");
+  background-size: 50px 50px;
+  top: -60px;
+  position: absolute;
+}
+
+.gameOver {
+  border: 1px dashed blue;
+  width: 420px 84px;
+  position: relative;
+  background-image: url("img/gameover.png");
+  background-size: 420px 84px;
+}
+
+#num {
+  font-family:Inconsolata, monospace;
+  text-align: center;
+  color: #34495e;
+}
+
+#score {
+  /* border: 1px dashed black; */
+  width: 100px;
+  height: 50px;
+  float: right;
+  top: 25px;
+  right: 25px;
+  position: absolute;
+}
+
+#dino {
+  /* border: 1px dashed black; */
+  width:50px;
+  height:50px;
+  margin-top:150px;
+  margin-left:325px;
+  background-image:url("img/dino.png");
+  filter: grayscale(100%);
+  background-size:50px 50px;
+  position: relative;
+}
+
+#nointernet {
+  /* border: 1px dashed black; */
+  width:392px;
+  height:162px;
+  background-image:url("img/nointernet.png");
+  background-size:392px 162px;
+  margin-top:15px;
+  margin-left:325px;
+  position:relative;
+}
+
+#background {
+  /* border: 1px dashed red; */
+  width: auto;
+  margin-top: 150px;
+  height: 150px;
+  background-image:url("img/backdrop.png");
+  background-size: 200px 200px;
+  visibility: hidden;
+
+}
+
+.fadeout {
+  animation: fadeout 2s;
+}
+
+.dinodrop {
+  animation: dinodrop 3s;
+}
+
+@keyframes fadeout {
+  0% { opacity:1; }
+  100% { opacity:0; }
+}
+
+@keyframes dinodrop {
+  0%   { top: 0px; }
+  100% { top: 450px; }
+}
