@@ -2,6 +2,9 @@ const nointernet = document.getElementById('nointernet');
 const dino = document.getElementById('dino');
 const num = document.querySelector('#num');
 const game = document.querySelector('.game');
+const end = document.getElementById('end');
+const obst = document.getElementsByClassName('obstacle');
+const refr = document.getElementById('refresh');
 let mvright = 0;
 let mvleft = 0;
 let obTop = -60;
@@ -75,9 +78,16 @@ function inRange(num1, num2, val){
 }
 
 function endGame(){
-  nointernet.style.backgroundImage = "url('img/gameover.png')";
-  nointernet.style.backgroundSize ="420px 50px";
-  nointernet.opacity = 100;
+  deleteDivs("obstacle");
+  end.style.visibility = "visible";
+  refr.style.visibilty = "visible";
+}
+
+function deleteDivs(className){
+    var elements = document.getElementsByClassName(className);
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
 }
 
 function generate_obstacles(){
@@ -101,6 +111,7 @@ function generate_obstacles(){
     let dinorighty = dino.offsetLeft+49;
     if (inRange(dinolefty,dinorighty,ob.offsetLeft) && ob.offsetTop >= 570 && ob.offsetTop <= 630){
       gameIsRunning = false;
+      ob.parentNode.removeChild(ob);
       endGame();
     }
   },500);
@@ -119,7 +130,12 @@ function start(){
   });
 
   let timerId = setTimeout(function(){
-    setInterval(generate_obstacles, 2000);
+    let gentimer = setInterval(generate_obstacles, 2000);
+    setInterval(function(){
+      if (!gameIsRunning){
+        clearInterval(gentimer);
+      }
+    }, 100);
   }, 5000);
 
   // generate_obstacles();
@@ -128,17 +144,10 @@ function start(){
     setInterval(function(){
         if(gameIsRunning){
           num.innerHTML =  score.toString();
-          // console.log(score);
           score++;
         }
     }, 100);
   }, 4000);
-
-if(!generate_obstacles){
-  clearInterval(timerId);
-}
-
-
 }
 
 //------------------------------------------------------------------------------//
@@ -151,6 +160,7 @@ document.body.onkeyup = function(e){
       document.getElementById('background').style.visibility = "visible";
     }, 1000);
     fadeout();
+    console.log(gameIsRunning);
     start();
   }
 }; //full spacebar

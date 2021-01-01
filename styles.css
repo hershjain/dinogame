@@ -1,11 +1,11 @@
 .game {
-  /* border: 1px dashed black; */
+  border: 1px dashed black;
   width: auto;
   height: 75vh;
 }
 
 .obstacle {
-  /* border: 1px dashed black; */
+  border: 1px dashed black;
   width: 50px;
   height: 50px;
   filter: grayscale(100%);
@@ -15,12 +15,28 @@
   position: absolute;
 }
 
-.gameOver {
-  border: 1px dashed blue;
-  width: 420px 84px;
-  position: relative;
+#end {
+  border: 1px dashed green;
+  height: 84px;
+  width: 420px;
+  position: absolute;
+  top: 150px;
+  left: 425px;
+  visibility: collapse;
   background-image: url("img/gameover.png");
   background-size: 420px 84px;
+}
+
+#refresh {
+  border: 1px dashed green;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 250px;
+  left: 605px;
+  visibility: collapse;
+  background-image: url("img/refresh.png");
+  background-size: 50px 50px;
 }
 
 #num {
@@ -30,7 +46,7 @@
 }
 
 #score {
-  /* border: 1px dashed black; */
+  border: 1px dashed black;
   width: 100px;
   height: 50px;
   float: right;
@@ -40,7 +56,7 @@
 }
 
 #dino {
-  /* border: 1px dashed black; */
+  border: 1px dashed black;
   width:50px;
   height:50px;
   margin-top:150px;
@@ -52,7 +68,7 @@
 }
 
 #nointernet {
-  /* border: 1px dashed black; */
+  border: 1px dashed black;
   width:392px;
   height:162px;
   background-image:url("img/nointernet.png");
@@ -63,7 +79,7 @@
 }
 
 #background {
-  /* border: 1px dashed red; */
+  border: 1px dashed red;
   width: auto;
   margin-top: 150px;
   height: 150px;
