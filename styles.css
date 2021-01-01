@@ -1,11 +1,11 @@
 .game {
-  border: 1px dashed black;
+  /* border: 1px dashed black; */
   width: auto;
   height: 75vh;
 }
 
 .obstacle {
-  border: 1px dashed black;
+  /* border: 1px dashed black; */
   width: 50px;
   height: 50px;
   filter: grayscale(100%);
@@ -16,7 +16,7 @@
 }
 
 #end {
-  border: 1px dashed green;
+  /* border: 1px dashed green; */
   height: 84px;
   width: 420px;
   position: absolute;
@@ -28,7 +28,7 @@
 }
 
 #refresh {
-  border: 1px dashed green;
+  /* border: 1px dashed green; */
   height: 50px;
   width: 50px;
   position: absolute;
@@ -37,6 +37,7 @@
   visibility: collapse;
   background-image: url("img/refresh.png");
   background-size: 50px 50px;
+  z-index: -1;
 }
 
 #num {
@@ -46,7 +47,7 @@
 }
 
 #score {
-  border: 1px dashed black;
+  /* border: 1px dashed black; */
   width: 100px;
   height: 50px;
   float: right;
@@ -56,7 +57,7 @@
 }
 
 #dino {
-  border: 1px dashed black;
+  /* border: 1px dashed black; */
   width:50px;
   height:50px;
   margin-top:150px;
@@ -68,7 +69,7 @@
 }
 
 #nointernet {
-  border: 1px dashed black;
+  /* border: 1px dashed black; */
   width:392px;
   height:162px;
   background-image:url("img/nointernet.png");
@@ -79,7 +80,7 @@
 }
 
 #background {
-  border: 1px dashed red;
+  /* border: 1px dashed red; */
   width: auto;
   margin-top: 150px;
   height: 150px;

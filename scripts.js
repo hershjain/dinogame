@@ -48,11 +48,6 @@ function moveleft(){
   }
 }
 
-function meteor(size, speed) {
-  this.size = size;
-  this.speed = speed;
-}
-
 function score_timer(collision){
   while(collision){
     num.innerHTML =  score.toString();
@@ -77,10 +72,14 @@ function inRange(num1, num2, val){
   }
 }
 
+function refreshPage(){
+    location.reload();
+}
+
 function endGame(){
   deleteDivs("obstacle");
   end.style.visibility = "visible";
-  refr.style.visibilty = "visible";
+  refr.style.visibility = "visible";
 }
 
 function deleteDivs(className){
@@ -102,7 +101,7 @@ function generate_obstacles(){
   let timerId = setInterval(function(){
     obMove = ob.offsetTop += 10;
     ob.style.top = obMove + "px";
-    console.log(ob.offsetTop);
+    // console.log(ob.offsetTop);
     if (ob.offsetTop == 700){
       ob.remove();
     }
@@ -111,10 +110,10 @@ function generate_obstacles(){
     let dinorighty = dino.offsetLeft+49;
     if (inRange(dinolefty,dinorighty,ob.offsetLeft) && ob.offsetTop >= 570 && ob.offsetTop <= 630){
       gameIsRunning = false;
-      ob.parentNode.removeChild(ob);
+      // ob.parentNode.removeChild(ob);
       endGame();
     }
-  },500);
+  },250);
 }
 
 //this is the start function where the program will run
