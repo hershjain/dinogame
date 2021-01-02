@@ -78,6 +78,7 @@ function refreshPage(){
 
 function endGame(){
   deleteDivs("obstacle");
+  nointernet.style.visibility = "collapse";
   end.style.visibility = "visible";
   refr.style.visibility = "visible";
 }

@@ -31,13 +31,19 @@
   /* border: 1px dashed green; */
   height: 50px;
   width: 50px;
-  position: absolute;
-  top: 250px;
-  left: 605px;
   visibility: collapse;
   background-image: url("img/refresh.png");
   background-size: 50px 50px;
-  z-index: -1;
+}
+
+#ref {
+  /* border: 1px dashed green; */
+  height: 50px;
+  width: 50px;
+  position: relative;
+  visibility: collapse;
+  top: 50px;
+  left: 605px;
 }
 
 #num {
@@ -74,7 +80,7 @@
   height:162px;
   background-image:url("img/nointernet.png");
   background-size:392px 162px;
-  margin-top:15px;
+  top: -20px;
   margin-left:325px;
   position:relative;
 }
@@ -82,7 +88,7 @@
 #background {
   /* border: 1px dashed red; */
   width: auto;
-  margin-top: 150px;
+  margin-top: 115px;
   height: 150px;
   background-image:url("img/backdrop.png");
   background-size: 200px 200px;
